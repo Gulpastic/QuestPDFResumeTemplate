@@ -10,7 +10,9 @@ Document.Create(container =>
     container.Page(page =>
     {
         page.Header()
-        .Padding(5)
+        .PaddingVertical(20)
+        .PaddingLeft(40)
+        .PaddingRight(40)
         .BorderBottom(1).ExtendHorizontal()
         .Column(col =>
         {
@@ -22,11 +24,10 @@ Document.Create(container =>
                 row.AutoItem().AlignCenter().Text(Placeholders.PhoneNumber());
                 row.AutoItem().AlignRight().Text("DOB: " + Placeholders.LongDate());
             });
+            col.Item().LineHorizontal(1).LineColor(Colors.Black);
         });
 
         page.Content()
-        .BorderBottom(1).ExtendHorizontal()
-        .PaddingTop(10)
         .PaddingLeft(40)
         .PaddingRight(40)
         .PaddingBottom(40)
@@ -60,4 +61,4 @@ Document.Create(container =>
         });
     });
 
-}).ShowInPreviewer();
+}).GeneratePdf("C:\\Users\\kartik\\OneDrive - Sparrow Risk Management Pvt. Ltd\\Documents\\Motherson\\generated\\TestPdf.pdf");
